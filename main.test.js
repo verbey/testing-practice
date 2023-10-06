@@ -1,4 +1,4 @@
-import { capitalize, reverse, Calculator } from "./main";
+import { capitalize, reverse, Calculator, ceasarEncoder } from "./main";
 
 test("Capitalization test", () => {
 	expect(capitalize("hello")).toBe("Hello");
@@ -18,4 +18,12 @@ test("Calculator object", () => {
 	expect(new Calculator(1, 2).multiply()).toBe(2);
 	expect(new Calculator(1, 2).divide()).toBe(0.5);
 	expect(new Calculator(1, 2)).toEqual({ operandOne: 1, operandTwo: 2 });
+});
+
+test("Ceasar cipher", () => {
+	expect(ceasarEncoder("hello", 5)).toBe("mjqqt");
+	expect(ceasarEncoder("zzz", 1)).toBe("aaa");
+	expect(ceasarEncoder("Aa", 1)).toBe("Bb");
+	expect(ceasarEncoder("a,a", 1)).toBe("b,b");
+	expect(ceasarEncoder("ZZZ", 1)).toBe("AAA");
 });
