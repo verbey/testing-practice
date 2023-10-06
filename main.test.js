@@ -17,4 +17,5 @@ test("Calculator object", () => {
 	expect(new Calculator(1, 2).subtract()).toBe(-1);
 	expect(new Calculator(1, 2).multiply()).toBe(2);
 	expect(new Calculator(1, 2).divide()).toBe(0.5);
+	expect(new Calculator(1, 2)).toEqual({ operandOne: 1, operandTwo: 2 });
 });
