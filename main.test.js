@@ -1,4 +1,4 @@
-import { capitalize, reverse, Calculator, ceasarEncoder } from "./main";
+import { capitalize, reverse, Calculator, ceasarEncoder, arrayAnalyze } from "./main";
 
 test("Capitalization test", () => {
 	expect(capitalize("hello")).toBe("Hello");
@@ -29,10 +29,10 @@ test("Ceasar cipher", () => {
 });
 
 test("Array analyzer", () => {
-	expect(analyzeArray([1, 8, 3, 4, 2, 6]).toEqual({
+	expect(arrayAnalyze([1, 8, 3, 4, 2, 6])).toEqual({
 		average: 4,
 		min: 1,
 		max: 8,
 		length: 6
-	}));
+	});
 });

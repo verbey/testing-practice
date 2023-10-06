@@ -44,3 +44,12 @@ export function ceasarEncoder(str, key) {
 
 	return encodedText;
 }
+
+export function arrayAnalyze(arr) {
+	let resultObj = {};
+	resultObj.min = Math.min(...arr);
+	resultObj.max = Math.max(...arr);
+	resultObj.length = arr.length;
+	resultObj.average = arr.reduce((a, b) => a + b) / arr.length;
+	return resultObj;
+}
