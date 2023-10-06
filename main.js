@@ -28,3 +28,19 @@ export class Calculator {
 		return this.operandOne / this.operandTwo;
 	}
 }
+
+export function ceasarEncoder(str, key) {
+	const alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	let encodedText = "";
+
+	str.split("").forEach((char) => {
+		if (/[a-z]/gi.test(char)) {
+			const charIndex = alphabet.indexOf(char);
+			const shiftedIndex = (charIndex + key);
+			encodedText += alphabet[shiftedIndex];
+		}
+		else encodedText += char;
+	});
+
+	return encodedText;
+}
